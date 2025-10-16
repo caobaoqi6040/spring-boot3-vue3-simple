@@ -1,0 +1,11 @@
+frpc.toml
+
+### IntelliJ IDEA ###
+.idea
+*.iws
+*.iml
+*.ipr
+
+### misc ###
+.DS_Store
+*.pem

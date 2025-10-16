@@ -1,0 +1,8 @@
+# ignore everything by default
+*
+
+# include what we need
+!**/src
+!.mvn
+!**/pom.xml
+!mvnw

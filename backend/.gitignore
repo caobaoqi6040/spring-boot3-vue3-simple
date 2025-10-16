@@ -1,0 +1,11 @@
+### env ###
+.env
+frpc.toml
+frpc.exe
+*-prod.properties
+
+### mvn ###
+target/
+.mvn/wrapper/maven-wrapper.jar
+!**/src/main/**/target/
+!**/src/test/**/target/

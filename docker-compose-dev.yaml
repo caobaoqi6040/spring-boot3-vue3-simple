@@ -1,0 +1,18 @@
+name: spring-boot3-vue3-simple
+services:
+  backend:
+    image: caobaoqi6040/spring-boot3-vue3-simple-backend:dev
+    restart: "no"
+    ports:
+      - "8080:8080"
+    environment:
+      TZ: Asia/Shanghai
+  frontend:
+    image: caobaoqi6040/spring-boot3-vue3-simple-frontend:dev
+    restart: "no"
+    ports:
+      - "10010:80"
+    environment:
+      TZ: Asia/Shanghai
+    depends_on:
+      - backend
