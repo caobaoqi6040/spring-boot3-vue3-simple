@@ -4,14 +4,14 @@ services:
     image: docker-registry.xing-lian-td.cn/spring-boot3-vue3-simple-backend:0.0.1
     restart: "no"
     ports:
-      - "8080:8080"
+      - "10051:8080"
     environment:
       TZ: Asia/Shanghai
   frontend:
     image: docker-registry.xing-lian-td.cn/spring-boot3-vue3-simple-frontend:0.0.1
     restart: "no"
     ports:
-      - "10010:80"
+      - "10001:80"
     environment:
       TZ: Asia/Shanghai
     depends_on:

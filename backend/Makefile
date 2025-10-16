@@ -4,16 +4,13 @@ TAG ?= latest
 
 .PHONY: build
 build:
-	docker build -f Dockerfile -t $(LOCAL_IMAGE_NAME):$(TAG) .
-
-.PHONY: tag-dev
-tag-dev:
-	docker tag $(LOCAL_IMAGE_NAME):latest $(LOCAL_IMAGE_NAME):dev
+	docker build -f Dockerfile -t $(LOCAL_IMAGE_NAME):dev .
 
 .PHONY: tag-release
 tag-release:
-	docker tag $(LOCAL_IMAGE_NAME):latest $(REMOTE_IMAGE_NAME):release
+	docker tag $(LOCAL_IMAGE_NAME):dev $(REMOTE_IMAGE_NAME):$(TAG)
 
 .PHONY: push-release
 push-release:
-	docker push $(REMOTE_IMAGE_NAME):release
+	docker push $(REMOTE_IMAGE_NAME):$(TAG)
+

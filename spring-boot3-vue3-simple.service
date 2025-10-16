@@ -6,7 +6,7 @@ Wants = network.target
 [Service]
 Type = simple
 
-ExecStart = /home/caobaoqi6040/Desktop/dev-tools/frp-0.64.0/frpc -c /home/caobaoqi6040/Desktop/code-dev/spring-boot3-vue3-simple/frontend/frpc.toml
+ExecStart = /home/caobaoqi6040/Desktop/dev-tools/frp-0.64.0/frpc -c /home/caobaoqi6040/Desktop/code-dev/spring-boot3-vue3-simple/frpc.toml
 
 [Install]
 WantedBy = multi-user.target

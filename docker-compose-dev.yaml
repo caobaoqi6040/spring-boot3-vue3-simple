@@ -11,7 +11,7 @@ services:
     image: caobaoqi6040/spring-boot3-vue3-simple-frontend:dev
     restart: "no"
     ports:
-      - "10010:80"
+      - "80:80"
     environment:
       TZ: Asia/Shanghai
     depends_on:
