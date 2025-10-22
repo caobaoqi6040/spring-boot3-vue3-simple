@@ -4,19 +4,27 @@ main:
       services:
         - docker
       stages:
+        - name: set backend tag
+          script: echo -n "${CNB_DOCKER_REGISTRY}/${CNB_REPO_SLUG_LOWERCASE}/backend:latest"
+          exports:
+            info: IMAGE_TAG
         - name: docker build
           script:
-            - docker build -t ${CNB_DOCKER_REGISTRY}/${CNB_REPO_SLUG_LOWERCASE}-backend:${CNB_COMMIT} ./backend
+            - docker build -t $IMAGE_TAG ./backend
         - name: docker push
           script:
-            - docker push ${CNB_DOCKER_REGISTRY}/${CNB_REPO_SLUG_LOWERCASE}-backend:${CNB_COMMIT}
+            - docker push $IMAGE_TAG
     - build-frontend-image:
       services:
         - docker
       stages:
+        - name: set backend tag
+          script: echo -n "${CNB_DOCKER_REGISTRY}/${CNB_REPO_SLUG_LOWERCASE}/frontend:latest"
+          exports:
+            info: IMAGE_TAG
         - name: docker build
           script:
-            - docker build -t ${CNB_DOCKER_REGISTRY}/${CNB_REPO_SLUG_LOWERCASE}-frontend:${CNB_COMMIT} ./frontend
+            - docker build -t $IMAGE_TAG ./backend
         - name: docker push
           script:
-            - docker push ${CNB_DOCKER_REGISTRY}/${CNB_REPO_SLUG_LOWERCASE}-frontend:${CNB_COMMIT}
+            - docker push $IMAGE_TAG
