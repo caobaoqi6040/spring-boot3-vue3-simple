@@ -31,7 +31,7 @@ main:
 $:
   vscode:
     - runner:
-        cpus: 2
+        tags: cnb:arch:amd64:gpu:H20
       docker:
         build: .ide/Dockerfile
       services:
