@@ -31,7 +31,7 @@ main:
 $:
   vscode:
     - runner:
-        cpus: 64
+        cpus: 2
       docker:
         build: .ide/Dockerfile
       services:
