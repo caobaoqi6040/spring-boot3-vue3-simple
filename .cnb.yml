@@ -5,7 +5,7 @@ main:
         - docker
       stages:
         - name: set backend tag
-          script: echo -n "${CNB_DOCKER_REGISTRY}/${CNB_REPO_SLUG_LOWERCASE}/backend:latest"
+          script: echo -n "${CNB_DOCKER_REGISTRY}/${CNB_REPO_SLUG_LOWERCASE}/backend:RELEASE.2025-10-22T15.03CST"
           exports:
             info: IMAGE_TAG
         - name: docker build
@@ -19,7 +19,7 @@ main:
         - docker
       stages:
         - name: set backend tag
-          script: echo -n "${CNB_DOCKER_REGISTRY}/${CNB_REPO_SLUG_LOWERCASE}/frontend:latest"
+          script: echo -n "${CNB_DOCKER_REGISTRY}/${CNB_REPO_SLUG_LOWERCASE}/frontend:RELEASE.2025-10-22T15.03CST"
           exports:
             info: IMAGE_TAG
         - name: docker build
