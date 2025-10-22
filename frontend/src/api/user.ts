@@ -9,7 +9,7 @@ export const userApi = {
    * 获取用户列表
    */
   getUserList() {
-    return http.get<UserInfo[]>('/users')
+    return http.get<UserInfo[]>('/v1/users')
   },
 
   /**
@@ -17,7 +17,7 @@ export const userApi = {
    * @param id 用户ID
    */
   getUserById(id: number) {
-    return http.get<UserInfo>(`/users/${id}`)
+    return http.get<UserInfo>(`/v1/users/${id}`)
   },
 
   /**
@@ -25,7 +25,7 @@ export const userApi = {
    * @param data 用户数据
    */
   createUser(data: Partial<UserInfo>) {
-    return http.post<UserInfo>('/users', data)
+    return http.post<UserInfo>('/v1/users', data)
   },
 
   /**
@@ -34,7 +34,7 @@ export const userApi = {
    * @param data 用户数据
    */
   updateUser(id: number, data: Partial<UserInfo>) {
-    return http.put<UserInfo>(`/users/${id}`, data)
+    return http.put<UserInfo>(`/v1/users/${id}`, data)
   },
 
   /**
@@ -42,6 +42,6 @@ export const userApi = {
    * @param id 用户ID
    */
   deleteUser(id: number) {
-    return http.delete(`/users/${id}`)
+    return http.delete(`/v1/users/${id}`)
   },
 }
