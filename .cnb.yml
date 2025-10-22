@@ -28,3 +28,12 @@ main:
         - name: docker push
           script:
             - docker push $IMAGE_TAG
+$:
+  vscode:
+    - runner:
+        cpus: 64
+      docker:
+        build: .ide/Dockerfile
+      services:
+        - vscode
+        - docker
