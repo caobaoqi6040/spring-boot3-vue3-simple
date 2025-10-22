@@ -24,7 +24,7 @@ main:
             info: IMAGE_TAG
         - name: docker build
           script:
-            - docker build -t $IMAGE_TAG ./backend
+            - docker build -t $IMAGE_TAG ./frontend
         - name: docker push
           script:
             - docker push $IMAGE_TAG
