@@ -3,4 +3,4 @@ branch:
     buttons:
       - name: build image
         description: build backend | frontend image
-        event: api_trigger_deploy
+        event: web_trigger_deploy

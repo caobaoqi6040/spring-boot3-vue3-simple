@@ -1,5 +1,5 @@
 main:
-  api_trigger_deploy:
+  web_trigger_deploy:
     - build-backend-image:
       services:
         - docker
