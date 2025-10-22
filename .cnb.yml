@@ -6,7 +6,7 @@ main:
       stages:
         - name: docker build
           script:
-            - docker build -t ${CNB_DOCKER_REGISTRY}/${CNB_REPO_SLUG_LOWERCASE}-backend:${CNB_COMMIT} backend/Dockerfile
+            - docker build -t ${CNB_DOCKER_REGISTRY}/${CNB_REPO_SLUG_LOWERCASE}-backend:${CNB_COMMIT} ./backend/Dockerfile
         - name: docker push
           script:
             - docker push ${CNB_DOCKER_REGISTRY}/${CNB_REPO_SLUG_LOWERCASE}-backend:${CNB_COMMIT}
@@ -16,7 +16,7 @@ main:
       stages:
         - name: docker build
           script:
-            - docker build -t ${CNB_DOCKER_REGISTRY}/${CNB_REPO_SLUG_LOWERCASE}-frontend:${CNB_COMMIT} frontend/Dockerfile
+            - docker build -t ${CNB_DOCKER_REGISTRY}/${CNB_REPO_SLUG_LOWERCASE}-frontend:${CNB_COMMIT} ./frontend/Dockerfile
         - name: docker push
           script:
             - docker push ${CNB_DOCKER_REGISTRY}/${CNB_REPO_SLUG_LOWERCASE}-frontend:${CNB_COMMIT}
