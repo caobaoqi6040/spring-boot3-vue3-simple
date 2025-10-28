@@ -110,7 +110,20 @@ const fetchUsers = async () => {
   }
 }
 
+const deleteUser = async () => {
+  try {
+    const response = await userApi.deleteUser(1)
+    users.value = response.data
+  } catch (err: any) {
+    error.value = err.message || '删除用户失败'
+    console.error('Failed to fetch users:', err)
+  } finally {
+    loading.value = false
+  }
+}
+
 onMounted(() => {
   fetchUsers()
+  deleteUser()
 })
 </script>

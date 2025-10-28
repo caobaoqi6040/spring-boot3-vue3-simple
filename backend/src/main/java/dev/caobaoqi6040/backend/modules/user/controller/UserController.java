@@ -5,9 +5,7 @@ import dev.caobaoqi6040.backend.modules.user.domain.response.UserInfoVo;
 import dev.caobaoqi6040.backend.modules.user.service.UserService;
 import lombok.RequiredArgsConstructor;
 import org.springframework.http.ResponseEntity;
-import org.springframework.web.bind.annotation.GetMapping;
-import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.RestController;
+import org.springframework.web.bind.annotation.*;
 
 import java.util.List;
 
@@ -32,4 +30,11 @@ public class UserController {
 			.toList();
 		return ResponseEntity.ok(list);
 	}
+
+	@DeleteMapping("/{id}")
+	public ResponseEntity<Void> delete(@PathVariable("id") Long id) {
+		service.delete(id);
+		return ResponseEntity.accepted().build();
+	}
+
 }

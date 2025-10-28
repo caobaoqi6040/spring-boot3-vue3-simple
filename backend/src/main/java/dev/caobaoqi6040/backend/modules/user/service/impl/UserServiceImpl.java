@@ -1,5 +1,6 @@
 package dev.caobaoqi6040.backend.modules.user.service.impl;
 
+import dev.caobaoqi6040.backend.exception.BusinessException;
 import dev.caobaoqi6040.backend.modules.user.entity.User;
 import dev.caobaoqi6040.backend.modules.user.service.UserService;
 import lombok.extern.slf4j.Slf4j;
@@ -10,6 +11,7 @@ import org.springframework.stereotype.Service;
 import java.time.LocalDateTime;
 import java.util.ArrayList;
 import java.util.List;
+import java.util.Objects;
 
 @Slf4j
 @Service
@@ -40,6 +42,11 @@ public class UserServiceImpl implements UserService, CommandLineRunner {
 				.updateTime(LocalDateTime.now())
 				.build());
 		}
+	}
+
+	@Override
+	public void delete(Long id) {
+		log.info("delete id = {}", id);
 	}
 
 	@Override

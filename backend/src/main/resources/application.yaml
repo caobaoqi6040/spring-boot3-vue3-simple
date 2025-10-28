@@ -1,0 +1,5 @@
+spring:
+  application:
+    name: spring-boot3-vue3-simple
+  profiles:
+    active: dev

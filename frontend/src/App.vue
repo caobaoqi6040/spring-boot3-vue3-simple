@@ -11,6 +11,12 @@ import {Button} from '@/components/ui/button'
           <RouterLink to="/">
             <Button variant="ghost">Home</Button>
           </RouterLink>
+          <RouterLink to="/flex">
+            <Button variant="ghost">Flex</Button>
+          </RouterLink>
+          <RouterLink to="/grid">
+            <Button variant="ghost">Grid</Button>
+          </RouterLink>
           <RouterLink to="/about">
             <Button variant="ghost">About</Button>
           </RouterLink>

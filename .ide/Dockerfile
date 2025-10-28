@@ -8,6 +8,7 @@ RUN apt-get update && \
         wget \
         unzip \
         openssh-server \
+        neofetch \
         zsh \
         curl
 
